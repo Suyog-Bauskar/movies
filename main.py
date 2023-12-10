@@ -1,9 +1,18 @@
-import pandas as pd
-from tabulate import tabulate
+import util
 
-df = pd.read_csv("movies.csv", index_col=False, header=0)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', None)
-pd.set_option('display.width', None)
+choice = 0
 
-print(tabulate(df, showindex=False, headers=df.columns))
+while choice != 6:
+    util.display_menu()
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        util.display_all_movies()
+    elif choice == 2:
+        util.display_top_10_rows()
+    elif choice == 3:
+        util.display_last_10_rows()
+    elif choice == 4:
+        util.find_shape_of_dataset()
+    elif choice == 5:
+        util.display_top_10_highest_rated_movies()
